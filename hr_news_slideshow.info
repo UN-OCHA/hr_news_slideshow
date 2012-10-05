@@ -1,0 +1,13 @@
+name = Humanitarianresponse News Slideshow
+description = Slideshow of latest news
+core = 7.x
+package = Humanitarianresponse
+dependencies[] = flexslider
+dependencies[] = flexslider_views_slideshow
+dependencies[] = humanitarianresponse_news
+dependencies[] = views_slideshow
+features[ctools][] = flexslider:flexslider_default_preset:1
+features[features_api][] = api:1
+features[features_override_items][] = views_view.news
+features[features_overrides][] = views_view.news.display|block_2
+features[flexslider_optionset][] = home_slideshow
