@@ -32,7 +32,7 @@ function hr_news_slideshow_views_default_views_alter(&$data) {
     $handler->display->display_options['defaults']['style_plugin'] = FALSE;
     $handler->display->display_options['style_plugin'] = 'slideshow';
     $handler->display->display_options['style_options']['flexslider_views_slideshow']['optionset'] = 'home_slideshow';
-    $handler->display->display_options['style_options']['flexslider_views_slideshow']['caption_field'] = 'body';
+    $handler->display->display_options['style_options']['flexslider_views_slideshow']['caption_field'] = 'nothing';
     $handler->display->display_options['style_options']['slideshow_type'] = 'flexslider_views_slideshow';
     $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
     $handler->display->display_options['style_options']['skin_info'] = array(
@@ -48,6 +48,7 @@ function hr_news_slideshow_views_default_views_alter(&$data) {
       'field_news_image' => 0,
       'title_field' => 0,
       'body' => 0,
+      'nothing' => 0,
     );
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
     $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -58,6 +59,7 @@ function hr_news_slideshow_views_default_views_alter(&$data) {
       'field_news_image' => 0,
       'title_field' => 0,
       'body' => 0,
+      'nothing' => 0,
     );
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
     $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -103,15 +105,26 @@ function hr_news_slideshow_views_default_views_alter(&$data) {
     $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
     $handler->display->display_options['fields']['body']['field'] = 'body';
     $handler->display->display_options['fields']['body']['label'] = '';
-    $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
+    $handler->display->display_options['fields']['body']['exclude'] = TRUE;
     $handler->display->display_options['fields']['body']['alter']['text'] = '<div class="flex-caption"><h2>[title_field]</h2>
-  [body]</div>';
+      [body]</div>';
+    $handler->display->display_options['fields']['body']['alter']['max_length'] = '35';
+    $handler->display->display_options['fields']['body']['alter']['word_boundary'] = FALSE;
+    $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
     $handler->display->display_options['fields']['body']['element_class'] = 'flex-caption';
     $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
     $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
     $handler->display->display_options['fields']['body']['settings'] = array(
       'trim_length' => '35',
     );
+    /* Field: Global: Custom text */
+    $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+    $handler->display->display_options['fields']['nothing']['table'] = 'views';
+    $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+    $handler->display->display_options['fields']['nothing']['label'] = '';
+    $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="flex-caption"><h2>[title_field]</h2>
+      [body]</div>';
+    $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
     $handler->display->display_options['block_description'] = 'Home Slideshow';
   }
 }
