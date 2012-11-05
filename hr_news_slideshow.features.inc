@@ -111,6 +111,7 @@ function hr_news_slideshow_views_default_views_alter(&$data) {
     $handler->display->display_options['fields']['body']['alter']['max_length'] = '35';
     $handler->display->display_options['fields']['body']['alter']['word_boundary'] = FALSE;
     $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+    $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
     $handler->display->display_options['fields']['body']['element_class'] = 'flex-caption';
     $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
     $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
