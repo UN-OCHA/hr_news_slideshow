@@ -17,6 +17,7 @@ function hr_news_slideshow_flexslider_default_presets() {
   $preset->title = 'Home Slideshow';
   $preset->theme = 'classic';
   $preset->imagestyle_normal = 'resp_img__grid_4';
+  $preset->imagestyle_thumbnail = 'flexslider_thumbnail';
   $preset->options = array(
     'animation' => 'fade',
     'animationDuration' => 600,
@@ -39,6 +40,8 @@ function hr_news_slideshow_flexslider_default_presets() {
     'controlsContainer' => '.flex-nav-container',
     'manualControls' => '',
   );
+  $preset->imagestyle_type = '';
+  $preset->mapping = '';
   $export['home_slideshow'] = $preset;
 
   return $export;
