@@ -40,8 +40,6 @@ function hr_news_slideshow_flexslider_default_presets() {
     'controlsContainer' => '.flex-nav-container',
     'manualControls' => '',
   );
-  $preset->imagestyle_type = '';
-  $preset->mapping = '';
   $export['home_slideshow'] = $preset;
 
   return $export;
